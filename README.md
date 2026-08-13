@@ -63,6 +63,10 @@ The search was saved as a **medium-severity scheduled Splunk alert** named:
 
 The rule runs every five minutes and triggers when at least one correlated result reaches the threshold.
 
+### Evidence
+
+![Failed Logon Detection](evidence/failed-logon-detection.png)
+
 ## Troubleshooting
 
 During testing, newly generated events initially appeared outside the expected Splunk search window.
@@ -109,6 +113,11 @@ Sysmon showed **how the process executed**.
 Event ID `4104` revealed **what the PowerShell command actually executed**.
 
 Correlating the two provided substantially more context than either event source alone.
+
+### Evidence
+
+![PowerShell Threat Hunt](evidence/powershell-threat-hunt.png)
+
 
 ## MITRE ATT&CK Mapping
 
@@ -157,14 +166,6 @@ The detection logic successfully identified the activity, and investigation of t
 
 For an unrecognized occurrence in a production environment, the next steps would include validating the user and host, safely recovering script content, reviewing parent-child processes and network activity, and escalating if authorization could not be confirmed.
 
----
-
-# Evidence
-
-Portfolio screenshots will document:
-
-1. Failed-logon correlation and threshold detection in Splunk
-2. Correlated Sysmon Event ID 1 and PowerShell Event ID 4104 telemetry
 
 ---
 
